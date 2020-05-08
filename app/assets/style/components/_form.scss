@@ -1,0 +1,49 @@
+.form {
+    &__group {
+        margin-bottom: 1rem;
+
+        @include responsive(tablet) {
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    &__input {
+        width: 100%;
+        border: 1px solid #000;
+        padding: 0.875rem 1rem;
+        background-color: transparent;
+        font-size: 1rem;
+
+        @include responsive(phone) {
+            padding: 0.5rem 0.75rem;
+        }
+
+        &::placeholder {
+            color: #000;
+            font-size: 1rem;
+            opacity: 0.2;
+        }
+    }
+
+    &__check {
+
+        &-input {
+            // appearance: none;
+
+            &[type="checkbox"] {
+                width: 1rem;
+                height: 1rem;
+                border: 1px solid #000;
+            }
+        }
+    }
+}
+
+textarea {
+    resize: vertical;
+}

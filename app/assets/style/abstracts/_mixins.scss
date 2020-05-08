@@ -1,0 +1,28 @@
+@mixin responsive($breakpoint) {
+    @if $breakpoint == tablet {
+        @media (max-width: 62em) { // 992px
+            @content;
+        }
+    } @else if $breakpoint == tablet-s {
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if $breakpoint == phone {
+        @media (max-width: 36em) { // 576px
+            @content;
+        }
+    } @else { @content; }
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

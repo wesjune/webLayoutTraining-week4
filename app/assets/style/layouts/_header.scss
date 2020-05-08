@@ -1,0 +1,85 @@
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.875rem 5.5rem;
+    background-color: $color-primary;
+
+    @include responsive(tablet) {
+        padding: 1.875rem 3rem;
+    }
+
+    @include responsive(tablet-s) {
+        justify-content: center;
+        padding: 0.625rem 1rem;
+    }
+
+    &__logo {
+        width: 5rem;
+
+        @include responsive(tablet-s) {
+            width: 3rem;
+        }
+    }
+
+    &__nav {
+        @include responsive(tablet-s) {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            height: 0px;
+            transition: all .5s;
+            overflow: hidden;
+            z-index: 160;
+        }
+
+        &.active {
+            background-color: $color-primary;
+
+            @include responsive(tablet-s) {
+                height: 16rem;
+            }
+        }
+
+        &-list {
+            display: flex;
+
+            @include responsive(tablet-s) {
+                flex-direction: column;
+            }
+        }
+
+        &-item {
+            margin-left: 4rem;
+            color: #fff;
+            font-size: 1.25rem;
+
+            @include responsive(tablet-s) {
+                display: block;
+                margin: 0;
+                border: 1px solid #FFFFFF;
+                padding: 1rem 0;
+                text-align: center;
+                transition: background .3s ease;
+
+                &:hover {
+                    background-color: $color-primary--dark;
+                }
+            }
+        }
+
+        &--toggle {
+            display: none;
+            position: absolute;
+            left: 1rem;
+            color: #fff;
+            font-size: 1.75rem;
+
+            @include responsive(tablet-s) {
+                display: block;
+            }
+        }
+    }
+}

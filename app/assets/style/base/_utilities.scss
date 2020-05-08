@@ -1,0 +1,14 @@
+.container {
+    max-width: 75rem + 3rem * 2;
+    margin: 0 auto;
+    padding: 0 3rem;
+
+    @include responsive(phone) {
+        max-width: 100%;
+        padding: 0 0.75rem;
+    }
+}
+
+.d-flex {
+    display: flex;
+}

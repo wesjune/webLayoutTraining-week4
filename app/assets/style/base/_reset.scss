@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: -moz-available;
+    min-height: fill-available;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+img,
+button {
+    user-select: none;
+}

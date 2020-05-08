@@ -1,0 +1,27 @@
+.btn {
+    appearance: none;
+    border: none;
+    padding: 1rem 3.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    @include responsive(tablet-s) {
+        padding: 0.5rem 2.25rem;
+    }
+
+    &-primary {
+        background-color: $color-primary;
+        color: #fff;
+
+        &:hover {
+            padding: 1rem 4.25rem;
+            background-color: $color-primary--dark;
+        }
+    }
+
+    &--center {
+        @include flexCenter;
+    }
+}
