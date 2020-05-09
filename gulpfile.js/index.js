@@ -4,6 +4,7 @@ const autoprefixer = require('autoprefixer');
 const minimist = require('minimist');
 const browserSync = require('browser-sync').create();
 const { envOptions } = require('./envOptions');
+const babel = require('gulp-babel');
 
 let options = minimist(process.argv.slice(2), envOptions);
 //現在開發狀態
@@ -48,6 +49,21 @@ function scss() {
     );
 }
 
+function js() {
+  return gulp.src(envOptions.js.src)
+  .pipe(
+    babel({
+      presets: ['@babel/env']
+    })
+  )
+  .pipe(gulp.dest(envOptions.js.path))
+  .pipe(
+      browserSync.reload({
+        stream: true,
+      }),
+    );
+}
+
 function browser() {
   browserSync.init({
     server: {
@@ -70,6 +86,7 @@ function deploy() {
 function watch() {
   gulp.watch(envOptions.html.src, gulp.series(layoutHTML));
   gulp.watch(envOptions.style.src, gulp.series(scss));
+  gulp.watch(envOptions.conyFile.src, gulp.series(copyFile));
 }
 
 exports.deploy = deploy;

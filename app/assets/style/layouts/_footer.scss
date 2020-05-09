@@ -48,10 +48,10 @@
     }
 
     &__social {
-        display: flex;
         position: absolute;
         top: -0.75rem;
         right: 0;
+        display: flex;
 
         @include responsive(tablet) {
             top: 0;
@@ -81,26 +81,7 @@
         }
         
         &-item {
-            &:not(:last-of-type) {
-                margin-bottom: 1rem;
-
-                @include responsive(tablet) {
-                    margin-bottom: 0.5rem;
-                }
-            }
-
-            &:first-of-type img {
-                padding-left: 0.25rem;
-                padding-right: 0.5rem;
-
-                @include responsive(tablet) {
-                    padding-right: 0.25rem;
-                }
-
-                @include responsive(phone) {
-                    padding-left: 1px;
-                }
-            }
+            display: flex;
 
             img {
                 width: 3rem;
@@ -116,13 +97,32 @@
                 }
             }
         }
+
+        &-tel {
+            margin-bottom: 1rem;
+
+            @include responsive(tablet) {
+                margin-bottom: 0.5rem;
+            }
+
+            img {
+                padding-left: 0.25rem;
+                padding-right: 0.5rem;
+
+                @include responsive(tablet) {
+                    padding-right: 0.25rem;
+                }
+
+                @include responsive(phone) {
+                    padding-left: 1px;
+                }
+            }
+        }
     }
 
     &__bottom {
         position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(space-between, center);
 
         @include responsive(tablet-s) {
             flex-direction: column;

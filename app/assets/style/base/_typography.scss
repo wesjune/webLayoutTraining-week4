@@ -1,45 +1,43 @@
-html {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+body {
+    font-family: Roboto, "PingFang TC", sans-serif;
     line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-}
+.heading {
+    &-1 {
+        font-size: $font-size--base * 4;
 
-h1 {
-    font-size: 4rem;
+        @include responsive(tablet) {
+            font-size: $font-size--base * 3;
+        }
 
-    @include responsive(tablet) {
-        font-size: 3rem;
+        @include responsive(phone) {
+            font-size: $font-size--base * 2;
+        }
     }
 
-    @include responsive(phone) {
-        font-size: 2rem;
+    &-2 {
+        font-weight: 600;
+        font-size: $font-size--base * 3;
+
+        @include responsive(tablet) {
+            font-size: $font-size--base * 2;
+        }
+
+        @include responsive(phone) {
+            font-size: $font-size--base * 1.5;
+        }
     }
-}
 
-h2 {
-    font-size: 3rem;
+    &-3 {
+        font-size: $font-size--base * 2.25;
 
-    @include responsive(tablet) {
-        font-size: 2rem;
+        @include responsive(tablet) {
+            font-size: $font-size--base * 1.75;
+        }
+
+        @include responsive(phone) {
+            font-size: $font-size--base * 1.25;
+        }
     }
-
-    @include responsive(phone) {
-        font-size: 1.5rem;
-    }
-}
-
-h3 {
-    font-size: 2.25rem;
-}
-
-a {
-    color: currentColor;
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
 }

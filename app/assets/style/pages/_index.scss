@@ -13,15 +13,20 @@
         }
 
         &__text {
-            display: flex;
+            @include flex(center, flex-end);
             flex-direction: column;
-            justify-content: center;
-            align-items: flex-end;
             height: 100%;
             color: $color-primary--dark;
         }
 
+        &__title {
+            font-weight: 500;
+        }
+
         &__subtitle {
+            font-weight: 500;
+            font-size: 2.25;
+
             @include responsive(tablet) {
                 font-size: 1.25rem;
             }
@@ -51,15 +56,13 @@
         }
 
         &__list {
-            display: flex;
+            @include flex(space-between, flex-start);
             flex-wrap: wrap;
-            justify-content: space-between;
         }
 
         &__item {
-            display: flex;
+            @include flex(flex-start, center);
             flex-direction: column;
-            align-items: center;
             width: 23.5%;
             padding: 1rem 2.25rem 0;
 
@@ -95,7 +98,7 @@
         &__icon {
 
             &-box {
-                @include flexCenter;
+                @include flex(center, center);
                 width: 6.25rem;
                 height: 6.25rem;
                 margin-bottom: 2.5rem;
@@ -147,8 +150,7 @@
 
         &__item {
             position: relative;
-            display: flex;
-            align-items: center;
+            @include flex(flex-start, center);
             
             &:not(:last-of-type) {
                 margin-bottom: 2rem;
@@ -189,8 +191,7 @@
         }
 
         &__title {
-            display: flex;
-            align-items: center;
+            @include flex(flex-start, center);
             margin: 0 1.5rem;
             color: $color-primary;
             text-transform: uppercase;
@@ -313,17 +314,13 @@
             }
 
             &__more {
-                display: flex;
-                align-items: center;
+                @include flex(flex-start, center);
                 position: absolute;
                 right: 0;
                 top: 20%;
                 padding: 0 6.75% 0 12.25%;
                 background-color: #fff;
-                color: $color-primary;
-                font-weight: bold;
-                font-size: 3.75vw;
-                line-height: 1.5;
+                font-size: clamp(2.5rem, 3.75vw, 5rem);
 
                 @include responsive(tablet-s) {
                     left: 6%;
@@ -331,19 +328,28 @@
                     font-size: 8vw;
                 }
 
-                p {
-                    padding-right: 5%;
-
-                    @include responsive(tablet-s) {
-                        padding-right: 4%;
+                &:hover {
+                    .gallery__more-icon {
+                        transform: translateX(20%);
                     }
+
+                    .gallery__more-text {
+                        text-shadow: 0 -5vw rgba($color-primary, 0.8), 0 -8vw rgba($color-primary, 0.4);
+                    }
+                }
+
+                &-text {
+                    padding-right: 4%;
+                    color: $color-primary;
+                    font-weight: 700;
+                    font-family: Roboto, sans-serif;
+                    transition: all .8s ease;
                 }
                 
                 &-icon {
                     flex-shrink: 0;
-                    width: 2.5vw;
-                    min-width: 1.125rem;
-                    max-width: 3rem;
+                    width: clamp(1.125rem, 2.5vw, 3rem);
+                    transition: transform 1s ease;
 
                     @include responsive(tablet-s) {
                         width: 4vw;
@@ -353,8 +359,7 @@
         }
 
         &__list {
-            display: flex;
-            justify-content: space-between;
+            @include flex(space-between, flex-start);
             margin-bottom: 9rem;
 
             @include responsive(tablet) {
@@ -371,20 +376,17 @@
         }
 
         &__item {
-            @include flexCenter;
+            @include flex(center, center);
             position: relative;
             width: 48.75%;
-            // padding: 20% 0;
             z-index: 2;
 
             @include responsive(tablet) {
                 width: 48%;
-                // padding: 18% 0;
             }
 
             @include responsive(tablet-s) {
                 width: 100%;
-                // padding: 32% 0;
 
                 &:not(:last-of-type) {
                     margin-bottom: 1.25rem;
@@ -421,9 +423,7 @@
                 padding: 40% 0;
                 color: $color-primary;
                 text-align: center;
-                font-weight: bold;
-                font-size: 4.5rem;
-                line-height: 1.5;
+                font: bold 4.5rem/1.5 Roboto, sans-serif;
 
                 @include responsive(tablet) {
                     padding: 36% 0;
@@ -466,8 +466,7 @@
         }
 
         &__list {
-            display: flex;
-            justify-content: space-between;
+            @include flex(space-between, flex-start);
             flex-wrap: wrap;
         }
 

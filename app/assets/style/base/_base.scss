@@ -17,6 +17,15 @@ body {
     min-height: fill-available;
 }
 
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
 img {
     display: block;
     max-width: 100%;

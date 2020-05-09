@@ -22,6 +22,6 @@
     }
 
     &--center {
-        @include flexCenter;
+        @include flex(center, center);
     }
 }

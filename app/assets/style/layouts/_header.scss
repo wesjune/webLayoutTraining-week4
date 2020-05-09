@@ -1,8 +1,6 @@
 .header {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
     padding: 1.875rem 5.5rem;
     background-color: $color-primary;
 
@@ -32,7 +30,7 @@
             height: 0px;
             transition: all .5s;
             overflow: hidden;
-            z-index: 160;
+            z-index: 80;
         }
 
         &.active {
