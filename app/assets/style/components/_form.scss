@@ -31,8 +31,12 @@
     }
 
     &__check {
+        &__input,
+        &__label {
+            cursor: pointer;
+        }
 
-        &-input {
+        &__input {
             // appearance: none;
 
             &[type="checkbox"] {
@@ -46,4 +50,8 @@
 
 textarea {
     resize: vertical;
+}
+
+::placeholder {
+    user-select: none;
 }

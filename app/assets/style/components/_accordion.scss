@@ -1,0 +1,62 @@
+.accordion {
+    border-collapse: collapse;
+    border: 1px solid #000;
+
+    &:not(:last-of-type) {
+        border-bottom: none;
+    }
+
+    &__header,
+    &__body__content {
+        padding: 1.375rem 2.375rem;
+
+        @include responsive(tablet) {
+            padding: 1rem 1.5rem;
+        }
+
+        @include responsive(phone) {
+            padding: 1rem;
+        }
+    }
+
+    &__header {
+        @include flex(space-between, center);
+        border-bottom: 1px solid #000;
+
+        &.active {
+            .expand-less {
+                display: none;
+            }
+        }
+
+        &:not(.active) {
+            .expand-more {
+                display: none;
+            }
+        }
+
+        &__heading {
+            font-weight: 600;
+            font-size: 1.25rem;
+    
+            @include responsive(tablet) {
+                font-size: 1rem;
+            }
+        }
+
+        .material-icons {
+            font-size: 2rem;
+        }
+    }
+
+    &__body {
+        max-height: 0;
+        background-color: #f2f2f2;
+        overflow: hidden;
+        transition: max-height .3s ease;
+        
+        @include responsive(tablet) {
+            font-size: 0.875rem;
+        }
+    }
+}

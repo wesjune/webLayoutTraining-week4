@@ -9,13 +9,13 @@
         }
 
         .container {
+            @include flex(flex-end, center);
             height: 100%;
         }
 
         &__text {
             @include flex(center, flex-end);
             flex-direction: column;
-            height: 100%;
             color: $color-primary--dark;
         }
 
@@ -277,6 +277,14 @@
             }
 
             &__item {
+                transition: filter .5s ease;
+
+                &:not(:last-of-type) {
+                    &:hover {
+                        filter: sepia(50%);
+                    }
+                }
+
                 &-1 {
                     grid-area: item-1;
                 }
@@ -475,6 +483,12 @@
             border: 1px solid #DEE2E6;
             padding: 0 1rem;
             background-color: #fff;
+            transition: all .5s ease;
+
+            &:hover {
+                box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+                transform: translateY(-0.5rem);
+            }
 
             @include responsive(tablet) {
                 width: 48%;
@@ -506,68 +520,68 @@
             }
         }
     }
+}
 
-    .contact {
-        padding: 4rem 0 5.75rem;
-        background-color: $color-primary--light;
+.contact {
+    padding: 4rem 0 5.75rem;
+    background-color: $color-primary--light;
+
+    @include responsive(tablet) {
+        padding: 2.5rem 0 3.5rem;
+    }
+
+    @include responsive(phone) {
+        padding: 1.5rem 0 3rem;
+    }
+
+    .container {
+        max-width: 49.5rem + 3rem * 2;
 
         @include responsive(tablet) {
-            padding: 2.5rem 0 3.5rem;
+            max-width: 31rem + 3rem * 2;
         }
 
         @include responsive(phone) {
-            padding: 1.5rem 0 3rem;
+            padding: 0 1.5rem;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 1.5rem;
+        text-align: center;
+
+        @include responsive(tablet) {
+            margin-bottom: 1rem;
         }
 
-        .container {
-            max-width: 49.5rem + 3rem * 2;
+        @include responsive(phone) {
+            margin-bottom: 0.5rem;
+        }
+    }
 
-            @include responsive(tablet) {
-                max-width: 31rem + 3rem * 2;
-            }
+    &__description {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
 
-            @include responsive(phone) {
-                padding: 0 1.5rem;
-            }
+        @include responsive(tablet) {
+            margin-bottom: 1rem;
+            font-size: 1rem;
         }
 
-        &__heading {
+        @include responsive(phone) {
+            margin-bottom: 0.5rem;
+        }
+    }
+    
+    .form__check {
+        margin-bottom: 2.5rem;
+
+        @include responsive(tablet) {
             margin-bottom: 1.5rem;
-            text-align: center;
-
-            @include responsive(tablet) {
-                margin-bottom: 1rem;
-            }
-
-            @include responsive(phone) {
-                margin-bottom: 0.5rem;
-            }
         }
 
-        &__description {
+        @include responsive(phone) {
             margin-bottom: 1.25rem;
-            font-size: 1.25rem;
-
-            @include responsive(tablet) {
-                margin-bottom: 1rem;
-                font-size: 1rem;
-            }
-
-            @include responsive(phone) {
-                margin-bottom: 0.5rem;
-            }
-        }
-        
-        .form__check {
-            margin-bottom: 2.5rem;
-
-            @include responsive(tablet) {
-                margin-bottom: 1.5rem;
-            }
-
-            @include responsive(phone) {
-                margin-bottom: 1.25rem;
-            }
         }
     }
 }

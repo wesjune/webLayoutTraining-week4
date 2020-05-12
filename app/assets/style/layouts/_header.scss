@@ -41,7 +41,7 @@
             }
         }
 
-        &-list {
+        &__list {
             display: flex;
 
             @include responsive(tablet-s) {
@@ -49,7 +49,7 @@
             }
         }
 
-        &-item {
+        &__link {
             margin-left: 4rem;
             color: #fff;
             font-size: 1.25rem;
@@ -78,6 +78,20 @@
             @include responsive(tablet-s) {
                 display: block;
             }
+
+            &.active {
+                .header__nav--open {
+                    display: none;
+                }
+
+                .header__nav--close {
+                    display: block;
+                }
+            }
+        }
+
+        &--close {
+            display: none;
         }
     }
 }

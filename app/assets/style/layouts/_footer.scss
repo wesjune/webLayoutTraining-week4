@@ -42,7 +42,7 @@
             display: none;
         }
 
-        &-link {
+        &__link {
             margin-right: 3rem;
         }
     }
@@ -57,7 +57,7 @@
             top: 0;
         }
 
-        &-item {
+        &__item {
             margin-left: 2rem;
 
             @include responsive(tablet) {
@@ -80,12 +80,19 @@
             font-size: 1rem;
         }
         
-        &-item {
-            display: flex;
+        &__item {
+            @include flex(flex-start, center);
+
+            &:hover {
+                img {
+                    transform: translateY(-0.25rem);
+                }
+            }
 
             img {
                 width: 3rem;
                 margin-right: 1rem;
+                transition: transform .5s ease;
 
                 @include responsive(tablet) {
                     width: 2rem;
@@ -98,7 +105,7 @@
             }
         }
 
-        &-tel {
+        &__tel {
             margin-bottom: 1rem;
 
             @include responsive(tablet) {
@@ -169,7 +176,7 @@
             }
         }
 
-        &-link {
+        &__link {
             margin-left: 4rem;
             font-size: 0.875rem;
 

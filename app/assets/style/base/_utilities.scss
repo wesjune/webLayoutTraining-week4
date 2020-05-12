@@ -8,3 +8,27 @@
         padding: 0 0.75rem;
     }
 }
+
+.hover {
+    &--underline {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -0.25rem;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            transform: scale3d(0, 1, 1);
+            transition: transform .3s ease;
+        }
+
+        &:hover {
+            &::after {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+    }
+}
