@@ -23,6 +23,12 @@
         @include flex(space-between, center);
         border-bottom: 1px solid #000;
 
+        &:hover,
+        &.active {
+            background-color: $color-primary;
+            color: #fff;
+        }
+
         &.active {
             .expand-less {
                 display: none;

@@ -120,6 +120,9 @@ body {
         -ms-flex-align: center;
             align-items: center;
     border-bottom: 1px solid #000; }
+    .accordion__header:hover, .accordion__header.active {
+      background-color: #AA0601;
+      color: #fff; }
     .accordion__header.active .expand-less {
       display: none; }
     .accordion__header:not(.active) .expand-more {
