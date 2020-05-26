@@ -12,9 +12,8 @@ html {
 
 body {
 	min-height: 100vh;
-    min-height: -webkit-fill-available;
-    min-height: -moz-available;
     min-height: fill-available;
+    overflow-x: hidden;
 }
 
 a {

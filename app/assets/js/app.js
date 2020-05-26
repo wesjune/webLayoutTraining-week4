@@ -34,10 +34,10 @@ accordionHeaders.forEach(accordionHeader => {
 });
 
 
-/* AOS */
+/* AOS - Animate on Scroll */
 AOS.init({
     // Global settings:
-    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+    disable: 'mobile', // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
     startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
     initClassName: 'aos-init', // class applied after initialization
     animatedClassName: 'aos-animate', // class applied on animation
@@ -54,5 +54,5 @@ AOS.init({
     easing: 'ease', // default easing for AOS animations
     once: true, // whether animation should happen only once - while scrolling down
     mirror: false, // whether elements should animate out while scrolling past them
-    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+    anchorPlacement: 'center-bottom', // defines which position of the element regarding to window should trigger the animation
 });
